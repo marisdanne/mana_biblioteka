@@ -32,7 +32,7 @@ function render() {
     for(let i = 0; i < gramatas.length; i++) {
         let gramata = `
         <div class="gramata">
-            <h3>Virsraksts: ${gramatas[i].virsraksts}</h4>
+            <h3>Virsraksts: ${gramatas[i].virsraksts}</h3>
             <h4>Autors: ${gramatas[i].autors}</h4>
         </div>`;
 
