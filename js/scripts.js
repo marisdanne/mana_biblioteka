@@ -1,6 +1,12 @@
 const POP_UP = document.getElementById('popUp');
 let gramatas = [];
 
+window.addEventListener('load', () => {
+    gramatas = JSON.parse(localStorage.getItem("gramatas") || "[]");
+    console.log(gramatas)
+    render();
+});
+
 document.getElementById('jaunaGramata').addEventListener('click', () => {
     POP_UP.style.display = 'block';
 
@@ -19,7 +25,6 @@ document.getElementById('pievienotGramatu').addEventListener('click', () => {
     render();
 })
 
-
 function render() {
     let biblioteka = document.getElementById('biblioteka');
     biblioteka.innerHTML = "";
@@ -33,4 +38,6 @@ function render() {
 
         biblioteka.innerHTML += gramata;
     }
+
+    localStorage.setItem("gramatas", JSON.stringify(gramatas))
 }
