@@ -1,3 +1,25 @@
-body{
+body {
     background-color: cadetblue;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+}
+
+#poga {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pievienotGramatu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 50px;
+    font-size: 25px;
+
 }
