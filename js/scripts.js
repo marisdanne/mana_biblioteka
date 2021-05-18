@@ -34,10 +34,26 @@ function render() {
         <div class="gramata">
             <h3>Virsraksts: ${gramatas[i].virsraksts}</h3>
             <h4>Autors: ${gramatas[i].autors}</h4>
+            <button onclick='removeBook("${gramatas[i].virsraksts}")'>Dzēst</button>
         </div>`;
 
         biblioteka.innerHTML += gramata;
     }
 
     localStorage.setItem("gramatas", JSON.stringify(gramatas))
+}
+
+
+function removeBook(gramata){
+    for(let i = 0; i < gramatas.length; i++) {
+        if(gramata === gramatas[i].virsraksts){
+            delete gramatas[i];
+            break;
+        }
+    }
+
+    gramatas = gramatas.filter(function (e) {return e != null;});
+
+    localStorage.setItem("gramatas", JSON.stringify(gramatas))
+    render();
 }
